@@ -93,7 +93,7 @@
 <meta name="description" content="Always,walk tall.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="SylarChen的个人博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/2019/03/index.html">
 <meta property="og:site_name" content="SylarChen的个人博客">
 <meta property="og:description" content="Always,walk tall.">
 <meta property="og:locale" content="C/C++">
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/archives/2019/03/">
 
 
 
 
 
-  <title>SylarChen的个人博客</title>
+  <title>Archive | SylarChen的个人博客</title>
   
 
 
@@ -154,8 +154,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-archive">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -280,427 +279,108 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
-    
+
+  
+  
+  
+  <div class="post-block archive">
+    <div id="posts" class="posts-collapse">
+      <span class="archive-move-on"></span>
+
+      <span class="archive-page-counter">
+        
+        
+        
+          
+        
+        Um..! 3 posts in total. Keep on posting.
+      </span>
+
       
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/12/ubuntu——learn/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sylar Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/logo.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SylarChen的个人博客">
-    </span>
-
-    
-      <header class="post-header">
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/12/ubuntu——learn/" itemprop="url">Untitled</a></h1>
         
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-12T14:43:12+08:00">
-                2019-03-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
         
           
-            <h1 id="Ubuntu-关于ubuntu源代码安装包的编译与安装"><a href="#Ubuntu-关于ubuntu源代码安装包的编译与安装" class="headerlink" title="[Ubuntu] 关于ubuntu源代码安装包的编译与安装"></a>[Ubuntu] 关于ubuntu源代码安装包的编译与安装</h1><hr>
-<h2 id="1-一般含有-configure文件夹的源代码包："><a href="#1-一般含有-configure文件夹的源代码包：" class="headerlink" title="1.一般含有 configure文件夹的源代码包："></a>1.一般含有 configure文件夹的源代码包：</h2><h4 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h4><pre><code>#解压
-$  cd &quot;&lt; &gt;&quot; #解压位置
-$ ./configure
-$ make
-$ make install
-</code></pre><p>-安装完毕。</p>
-<h2 id="2-没有-configure文件夹但有configure-ca的代码包"><a href="#2-没有-configure文件夹但有configure-ca的代码包" class="headerlink" title="2.没有 configure文件夹但有configure.ca的代码包"></a>2.没有 configure文件夹但有configure.ca的代码包</h2><h4 id="执行-1"><a href="#执行-1" class="headerlink" title="执行"></a>执行</h4><pre><code>$ automake
-</code></pre><p>或</p>
-<pre><code>$ autoconf
-</code></pre><h4 id="可能出现的错误："><a href="#可能出现的错误：" class="headerlink" title="可能出现的错误："></a>可能出现的错误：</h4><pre><code>➜ intel-gpu-tools-1.22 automake
-configure.ac:108: error: must install xorg-macros 1.16 or later before running autoconf/autogen
-configure.ac:108: the top level
-autom4te: /usr/bin/m4 failed with exit status: 1
-automake: error: autoconf failed with exit status: 1
-</code></pre><ul>
-<li>原因：缺少环境 util-macros</li>
-<li>解决方法1：</li>
-</ul>
-<pre><code>$ apt-get install xutils-dev
-</code></pre><ul>
-<li>解决方法2：<ul>
-<li>安装 util-macros</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><p>安装 xorg-macros<br><a href="http://xorg.mirror.solnet.ch/pub/individual/util/" target="_blank" rel="noopener">http://xorg.mirror.solnet.ch/pub/individual/util/</a></p>
-<p>解压后</p>
-</li>
-</ul>
-<pre><code>./configure --prefix=/usr
-make  //可以不用这一步，make好像没有什么作用
-sudo  make  install
-</code></pre><p>关键说明：./configure –prefix=/usr<br>通常只需要./configure就可以下一步了，但系统搜索不到安装的位置，即使看起来下面的步骤都正常。所以需要 </p>
-<pre><code>--prefix=/usr
-</code></pre><hr>
-<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ul>
-<li><a href="https://blog.csdn.net/ghostking8/article/details/74475045" target="_blank" rel="noopener">https://blog.csdn.net/ghostking8/article/details/74475045</a></li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-        
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/02/new_post/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sylar Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/logo.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SylarChen的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/02/new_post/" itemprop="url">Untitled</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-02T16:22:16+08:00">
-                2019-03-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    <div>
-        
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/11/hello-word/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sylar Chen">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/logo.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SylarChen的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/11/hello-word/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-11T17:25:00+08:00">
-                2019-02-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>今天，通过<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>，把博客挂在了<a href="https://github.com" target="_blank" rel="noopener">Github</a>上，第一条博客用来纪念一波                </p>
-<ul>
-<li>2019/02/11
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/02/11/hello-word/#more" rel="contents">
-              Read more &raquo;
-            </a>
+          <div class="collection-title">
+            <h1 class="archive-year" id="archive-year-2019">2019</h1>
           </div>
-          <!--/noindex-->
         
-      
-    </li></ul></div>
-    
-    
-    
+        
 
-    <div>
         
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2019/03/12/ubuntu——learn/" itemprop="url">
+              
+                <span itemprop="name">Untitled</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-03-12T14:43:12+08:00" content="2019-03-12">
+          03-12
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2019/03/02/new_post/" itemprop="url">
+              
+                <span itemprop="name">Untitled</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-03-02T16:22:16+08:00" content="2019-03-02">
+          03-02
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
     </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
   
   
   
-  </article>
-
-
-    
-  </section>
 
   
+
 
 
           </div>
