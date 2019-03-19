@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="2019/03/~">
+<meta name="description" content="原题：题目描述有N条绳子，它们的长度分别为Li。如果从它们中切割出K条长度相同的 绳子，这K条绳子每条最长能有多长？答案保留到小数点后2位。  2019/3/19">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu下安装ROS melodic与配置，中科大for_beginnner的配置">
-<meta property="og:url" content="http://yoursite.com/2019/03/02/Ubuntu下安装ROS melodic与配置，中科大for_beginnner的配置/index.html">
+<meta property="og:title" content="关于切绳子问题的题解">
+<meta property="og:url" content="http://yoursite.com/2019/03/19/关于切绳子问题的题解/index.html">
 <meta property="og:site_name" content="SylarChen的个人博客">
-<meta property="og:description" content="2019/03/~">
+<meta property="og:description" content="原题：题目描述有N条绳子，它们的长度分别为Li。如果从它们中切割出K条长度相同的 绳子，这K条绳子每条最长能有多长？答案保留到小数点后2位。  2019/3/19">
 <meta property="og:locale" content="C/C++">
-<meta property="og:updated_time" content="2019-03-12T07:20:53.446Z">
+<meta property="og:updated_time" content="2019-03-19T14:25:48.637Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu下安装ROS melodic与配置，中科大for_beginnner的配置">
-<meta name="twitter:description" content="2019/03/~">
+<meta name="twitter:title" content="关于切绳子问题的题解">
+<meta name="twitter:description" content="原题：题目描述有N条绳子，它们的长度分别为Li。如果从它们中切割出K条长度相同的 绳子，这K条绳子每条最长能有多长？答案保留到小数点后2位。  2019/3/19">
 
 
 
@@ -130,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/02/Ubuntu下安装ROS melodic与配置，中科大for_beginnner的配置/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/19/关于切绳子问题的题解/">
 
 
 
 
 
-  <title>Ubuntu下安装ROS melodic与配置，中科大for_beginnner的配置 | SylarChen的个人博客</title>
+  <title>关于切绳子问题的题解 | SylarChen的个人博客</title>
   
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/02/Ubuntu下安装ROS melodic与配置，中科大for_beginnner的配置/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/19/关于切绳子问题的题解/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sylar Chen">
@@ -312,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ubuntu下安装ROS melodic与配置，中科大for_beginnner的配置</h1>
+          <h1 class="post-title" itemprop="name headline">关于切绳子问题的题解</h1>
         
 
         <div class="post-meta">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-02T16:22:16+08:00">
-                2019-03-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-19T22:10:08+08:00">
+                2019-03-19
               </time>
             
 
@@ -362,10 +362,79 @@
       
 
       
-        <ul>
-<li>2019/03/~  <a id="more"></a>
+        <h1 id="原题："><a href="#原题：" class="headerlink" title="原题："></a>原题：</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>有N条绳子，它们的长度分别为Li。如果从它们中切割出K条长度相同的</p>
+<p>绳子，这K条绳子每条最长能有多长？答案保留到小数点后2位。</p>
+<ul>
+<li>2019/3/19  <a id="more"></a>
 </li>
 </ul>
+<h2 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h2><h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>第一行两个整数N和K，接下来N行，描述了每条绳子的长度Li。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>切割后每条绳子的最大长度。</p>
+<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><ul>
+<li>输入样例#1：</li>
+</ul>
+<pre><code>4 11
+8.02
+7.43
+4.57
+5.39
+</code></pre><ul>
+<li>输出样例#1：</li>
+</ul>
+<pre><code>2.00
+</code></pre><h1 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h1><p>对于100%的数据 0&lt;Li&lt;=100000.00 0&lt;n&lt;=10000 0&lt;k&lt;=10000</p>
+<p>链接：<a href="https://www.luogu.org/problemnew/show/P1577" target="_blank" rel="noopener">洛谷P1577</a></p>
+<h1 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h1><ul>
+<li>答案单调性：剪得越短可分成的越显然单调。</li>
+<li>答案容易验证：O(n) 时间内贪心枚举看最终能形成的电线数是否大于等于 k 即可。</li>
+</ul>
+<p>很明显，这是一个二分查找问题</p>
+<h2 id="本题坑点："><a href="#本题坑点：" class="headerlink" title="本题坑点："></a>本题坑点：</h2><ul>
+<li>答案用double容易丢精度</li>
+<li>二分过程要处理<code>mid==0</code>的情况，不然会出现除以0的未定义行为</li>
+</ul>
+<h1 id="完整C-代码："><a href="#完整C-代码：" class="headerlink" title="完整C++代码："></a>完整C++代码：</h1><pre><code>#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+#include &lt;cmath&gt;
+using namespace std;
+
+
+int main(){
+    int T, n, ret = 0;
+    double len, ans = 0;
+    int Max = 100000000;
+    cin &gt;&gt; T &gt;&gt; n;
+    int arr[T];
+
+    for (int i = 0; i &lt; T; i++){
+        scanf(&quot;%lf&quot;, &amp;len);
+        arr[i] = len * 100;
+        Max = max(arr[i], Max);
+    }
+    int l = 0, r = Max, mid = 0, o = 0;
+    while (l &lt;= r){
+        o = 0;
+        mid = (l + r) &gt;&gt; 1;
+        if (mid == 0)
+            break;
+        for (int i = 0; i &lt; T; i++){
+            o = o + arr[i] / mid;
+        }
+        if (o &lt; n){
+            r = mid - 1;
+        } else {
+            l = mid + 1;
+            ret = max(ret, mid);
+        }
+    }
+
+
+    printf(&quot;%.2f\n&quot;, (double)ret / 100);
+
+
+    return 0;
+}
+</code></pre><p>有错误或者可优化的地方请大佬赐教</p>
 
       
     </div>
@@ -416,8 +485,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/11/hello-word/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/03/12/关于ubuntu源代码安装包的编译与安装/" rel="next" title="关于ubuntu源代码安装包的编译与安装">
+                <i class="fa fa-chevron-left"></i> 关于ubuntu源代码安装包的编译与安装
               </a>
             
           </div>
@@ -425,10 +494,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/12/关于ubuntu源代码安装包的编译与安装/" rel="prev" title="关于ubuntu源代码安装包的编译与安装">
-                关于ubuntu源代码安装包的编译与安装 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -480,8 +545,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -541,6 +615,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#原题："><span class="nav-number">1.</span> <span class="nav-text">原题：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述"><span class="nav-number">1.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入输出格式"><span class="nav-number">1.2.</span> <span class="nav-text">输入输出格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入格式："><span class="nav-number">1.2.1.</span> <span class="nav-text">输入格式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出格式："><span class="nav-number">1.2.2.</span> <span class="nav-text">输出格式：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入输出样例"><span class="nav-number">1.3.</span> <span class="nav-text">输入输出样例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#说明"><span class="nav-number">2.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#题解："><span class="nav-number">3.</span> <span class="nav-text">题解：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#本题坑点："><span class="nav-number">3.1.</span> <span class="nav-text">本题坑点：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#完整C-代码："><span class="nav-number">4.</span> <span class="nav-text">完整C++代码：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

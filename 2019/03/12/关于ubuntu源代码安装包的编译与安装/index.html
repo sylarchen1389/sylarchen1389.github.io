@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="2019/03/~">
+<meta name="description" content="关于ubuntu的几种源代源代码安装包的编译与安装方式，安装可能出现的错误以及解决方式。  2019/3/12">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu下安装ROS melodic与配置，中科大for_beginnner的配置">
-<meta property="og:url" content="http://yoursite.com/2019/03/02/Ubuntu下安装ROS melodic与配置，中科大for_beginnner的配置/index.html">
+<meta property="og:title" content="关于ubuntu源代码安装包的编译与安装">
+<meta property="og:url" content="http://yoursite.com/2019/03/12/关于ubuntu源代码安装包的编译与安装/index.html">
 <meta property="og:site_name" content="SylarChen的个人博客">
-<meta property="og:description" content="2019/03/~">
+<meta property="og:description" content="关于ubuntu的几种源代源代码安装包的编译与安装方式，安装可能出现的错误以及解决方式。  2019/3/12">
 <meta property="og:locale" content="C/C++">
-<meta property="og:updated_time" content="2019-03-12T07:20:53.446Z">
+<meta property="og:updated_time" content="2019-03-12T15:30:32.665Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu下安装ROS melodic与配置，中科大for_beginnner的配置">
-<meta name="twitter:description" content="2019/03/~">
+<meta name="twitter:title" content="关于ubuntu源代码安装包的编译与安装">
+<meta name="twitter:description" content="关于ubuntu的几种源代源代码安装包的编译与安装方式，安装可能出现的错误以及解决方式。  2019/3/12">
 
 
 
@@ -130,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/02/Ubuntu下安装ROS melodic与配置，中科大for_beginnner的配置/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/12/关于ubuntu源代码安装包的编译与安装/">
 
 
 
 
 
-  <title>Ubuntu下安装ROS melodic与配置，中科大for_beginnner的配置 | SylarChen的个人博客</title>
+  <title>关于ubuntu源代码安装包的编译与安装 | SylarChen的个人博客</title>
   
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/02/Ubuntu下安装ROS melodic与配置，中科大for_beginnner的配置/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/12/关于ubuntu源代码安装包的编译与安装/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sylar Chen">
@@ -312,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ubuntu下安装ROS melodic与配置，中科大for_beginnner的配置</h1>
+          <h1 class="post-title" itemprop="name headline">关于ubuntu源代码安装包的编译与安装</h1>
         
 
         <div class="post-meta">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-02T16:22:16+08:00">
-                2019-03-02
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-12T14:43:12+08:00">
+                2019-03-12
               </time>
             
 
@@ -362,9 +362,53 @@
       
 
       
-        <ul>
-<li>2019/03/~  <a id="more"></a>
+        <p>关于ubuntu的几种源代源代码安装包的编译与安装方式，安装可能出现的错误以及解决方式。</p>
+<ul>
+<li>2019/3/12<a id="more"></a>
 </li>
+</ul>
+<h2 id="1-一般含有-configure文件夹的源代码包："><a href="#1-一般含有-configure文件夹的源代码包：" class="headerlink" title="1.一般含有 configure文件夹的源代码包："></a>1.一般含有 configure文件夹的源代码包：</h2><h4 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h4><pre><code>#解压
+$  cd &quot;&lt; &gt;&quot; #解压位置
+$ ./configure
+$ make
+$ make install
+</code></pre><p>-安装完毕。</p>
+<h2 id="2-没有-configure文件夹但有configure-ca的代码包"><a href="#2-没有-configure文件夹但有configure-ca的代码包" class="headerlink" title="2.没有 configure文件夹但有configure.ca的代码包"></a>2.没有 configure文件夹但有configure.ca的代码包</h2><h4 id="执行-1"><a href="#执行-1" class="headerlink" title="执行"></a>执行</h4><pre><code>$ automake
+</code></pre><p>或</p>
+<pre><code>$ autoconf
+</code></pre><ul>
+<li>需要automake</li>
+</ul>
+<pre><code>$ apt-get inastall automake &amp;&amp; makeconf
+</code></pre><h4 id="可能出现的错误："><a href="#可能出现的错误：" class="headerlink" title="可能出现的错误："></a>可能出现的错误：</h4><pre><code>➜ intel-gpu-tools-1.22 automake
+configure.ac:108: error: must install xorg-macros 1.16 or later before running autoconf/autogen
+configure.ac:108: the top level
+autom4te: /usr/bin/m4 failed with exit status: 1
+automake: error: autoconf failed with exit status: 1
+</code></pre><ul>
+<li>原因：缺少环境 util-macros</li>
+<li>解决方法1：</li>
+</ul>
+<pre><code>$ apt-get install xutils-dev
+</code></pre><ul>
+<li>解决方法2：<ul>
+<li>安装 util-macros</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>安装 xorg-macros<br><a href="http://xorg.mirror.solnet.ch/pub/individual/util/" target="_blank" rel="noopener">http://xorg.mirror.solnet.ch/pub/individual/util/</a></p>
+<p>解压后</p>
+</li>
+</ul>
+<pre><code>$  ./configure --prefix=/usr
+$ make  //可以不用这一步，make好像没有什么作用
+$ sudo  make  install
+</code></pre><p>关键说明：./configure –prefix=/usr<br>通常只需要./configure就可以下一步了，但系统搜索不到安装的位置，即使看起来下面的步骤都正常。所以需要 </p>
+<pre><code>--prefix=/usr
+</code></pre><hr>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ul>
+<li><a href="https://blog.csdn.net/ghostking8/article/details/74475045" target="_blank" rel="noopener">https://blog.csdn.net/ghostking8/article/details/74475045</a></li>
 </ul>
 
       
@@ -416,8 +460,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/11/hello-word/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/03/02/Ubuntu下安装ROS melodic与配置，中科大for_beginnner的配置/" rel="next" title="Ubuntu下安装ROS melodic与配置，中科大for_beginnner的配置">
+                <i class="fa fa-chevron-left"></i> Ubuntu下安装ROS melodic与配置，中科大for_beginnner的配置
               </a>
             
           </div>
@@ -426,8 +470,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/12/关于ubuntu源代码安装包的编译与安装/" rel="prev" title="关于ubuntu源代码安装包的编译与安装">
-                关于ubuntu源代码安装包的编译与安装 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/19/关于切绳子问题的题解/" rel="prev" title="关于切绳子问题的题解">
+                关于切绳子问题的题解 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -480,8 +524,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -541,6 +594,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-一般含有-configure文件夹的源代码包："><span class="nav-number">1.</span> <span class="nav-text">1.一般含有 configure文件夹的源代码包：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#执行"><span class="nav-number">1.0.1.</span> <span class="nav-text">执行</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#2-没有-configure文件夹但有configure-ca的代码包"><span class="nav-number">2.</span> <span class="nav-text">2.没有 configure文件夹但有configure.ca的代码包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#执行-1"><span class="nav-number">2.0.1.</span> <span class="nav-text">执行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可能出现的错误："><span class="nav-number">2.0.2.</span> <span class="nav-text">可能出现的错误：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文章"><span class="nav-number">2.1.</span> <span class="nav-text">参考文章</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
