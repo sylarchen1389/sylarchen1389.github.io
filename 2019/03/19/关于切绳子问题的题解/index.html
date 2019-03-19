@@ -97,7 +97,7 @@
 <meta property="og:site_name" content="SylarChen的个人博客">
 <meta property="og:description" content="原题：题目描述有N条绳子，它们的长度分别为Li。如果从它们中切割出K条长度相同的 绳子，这K条绳子每条最长能有多长？答案保留到小数点后2位。  2019/3/19">
 <meta property="og:locale" content="C/C++">
-<meta property="og:updated_time" content="2019-03-19T14:25:48.637Z">
+<meta property="og:updated_time" content="2019-03-19T14:27:52.578Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于切绳子问题的题解">
 <meta name="twitter:description" content="原题：题目描述有N条绳子，它们的长度分别为Li。如果从它们中切割出K条长度相同的 绳子，这K条绳子每条最长能有多长？答案保留到小数点后2位。  2019/3/19">
@@ -415,6 +415,7 @@ int main(){
     while (l &lt;= r){
         o = 0;
         mid = (l + r) &gt;&gt; 1;
+        //处理mid == 0
         if (mid == 0)
             break;
         for (int i = 0; i &lt; T; i++){
