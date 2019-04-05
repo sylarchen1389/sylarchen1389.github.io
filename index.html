@@ -85,8 +85,6 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="SylarChen的个人博客" type="application/atom+xml">
-
 
 
 
@@ -173,7 +171,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">记录学习日志:）</p>
+        <h1 class="site-subtitle" itemprop="description">记录学习日志:）</h1>
       
   </div>
 
@@ -314,9 +312,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/05/HDU 2181 哈密顿绕行世界问题 (dfs)/" itemprop="url">HDU 2181 哈密顿绕行世界问题 (dfs)</a></h1>
+                <a class="post-title-link" href="/2019/04/05/HDU 2181 哈密顿绕行世界问题 (dfs)/" itemprop="url">HDU 2181 哈密顿绕行世界问题 (dfs)</a></h2>
         
 
         <div class="post-meta">
@@ -450,9 +448,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/19/关于切绳子问题的题解/" itemprop="url">POJ 1064 Cable master(二分查找)</a></h1>
+                <a class="post-title-link" href="/2019/03/19/关于切绳子问题的题解/" itemprop="url">POJ 1064 Cable master(二分查找)</a></h2>
         
 
         <div class="post-meta">
@@ -586,9 +584,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/12/关于ubuntu源代码安装包的编译与安装/" itemprop="url">关于ubuntu源代码安装包的编译与安装</a></h1>
+                <a class="post-title-link" href="/2019/03/12/关于ubuntu源代码安装包的编译与安装/" itemprop="url">关于ubuntu源代码安装包的编译与安装</a></h2>
         
 
         <div class="post-meta">
@@ -716,9 +714,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/03/02/Ubuntu下安装ROS melodic与配置，中科大for_beginnner的配置/" itemprop="url">Ubuntu下安装ROS melodic与配置，中科大for_beginnner的配置</a></h1>
+                <a class="post-title-link" href="/2019/03/02/Ubuntu下安装ROS melodic与配置，中科大for_beginnner的配置/" itemprop="url">Ubuntu下安装ROS melodic与配置，中科大for_beginnner的配置</a></h2>
         
 
         <div class="post-meta">
@@ -845,9 +843,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/11/hello-word/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2019/02/11/hello-word/" itemprop="url">Hello World</a></h2>
         
 
         <div class="post-meta">
@@ -983,7 +981,7 @@
               <img class="site-author-image" itemprop="image" src="/images/logo.jpg" alt="Sylar Chen">
             
               <p class="site-author-name" itemprop="name">Sylar Chen</p>
-              <p class="site-description motion-element" itemprop="description">Always,walk tall.</p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -1005,13 +1003,6 @@
 
           </nav>
 
-          
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
           
 
           
@@ -1245,7 +1236,7 @@
     var isfetched = false;
     var isXml = true;
     // Search DB path;
-    var search_path = "search.xml";
+    var search_path = "";
     if (search_path.length === 0) {
       search_path = "search.xml";
     } else if (/json$/i.test(search_path)) {
