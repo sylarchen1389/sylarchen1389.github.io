@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="Time limit: 1000 ms Memory limit: 10000 kB  Description有N条绳子，它们的长度分别为Li。如果从它们中切割出K条长度相同的 绳子，这K条绳子每条最长能有多长？答案保留到小数点后2位。   洛谷P1577,  POJ 1064  2019/3/19">
+<meta name="description" content="Time limit: 2000 ms Memory limit: 65536 kB  HDU - 2717 ; POJ - 3278 题干：Description:Farmer John has been informed of the location of a fugitive cow and wants to catch her immediately. He starts at a p">
 <meta property="og:type" content="article">
-<meta property="og:title" content="POJ 1064 Cable master(二分查找)">
-<meta property="og:url" content="http://yoursite.com/2019/03/19/关于切绳子问题的题解/index.html">
+<meta property="og:title" content="Catch That Cow (bfs)">
+<meta property="og:url" content="http://yoursite.com/2019/04/06/Catch That Cow/index.html">
 <meta property="og:site_name" content="SylarChen的个人博客">
-<meta property="og:description" content="Time limit: 1000 ms Memory limit: 10000 kB  Description有N条绳子，它们的长度分别为Li。如果从它们中切割出K条长度相同的 绳子，这K条绳子每条最长能有多长？答案保留到小数点后2位。   洛谷P1577,  POJ 1064  2019/3/19">
+<meta property="og:description" content="Time limit: 2000 ms Memory limit: 65536 kB  HDU - 2717 ; POJ - 3278 题干：Description:Farmer John has been informed of the location of a fugitive cow and wants to catch her immediately. He starts at a p">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-05T16:22:54.888Z">
+<meta property="og:updated_time" content="2019-04-05T16:22:34.740Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="POJ 1064 Cable master(二分查找)">
-<meta name="twitter:description" content="Time limit: 1000 ms Memory limit: 10000 kB  Description有N条绳子，它们的长度分别为Li。如果从它们中切割出K条长度相同的 绳子，这K条绳子每条最长能有多长？答案保留到小数点后2位。   洛谷P1577,  POJ 1064  2019/3/19">
+<meta name="twitter:title" content="Catch That Cow (bfs)">
+<meta name="twitter:description" content="Time limit: 2000 ms Memory limit: 65536 kB  HDU - 2717 ; POJ - 3278 题干：Description:Farmer John has been informed of the location of a fugitive cow and wants to catch her immediately. He starts at a p">
 
 
 
@@ -130,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/19/关于切绳子问题的题解/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/06/Catch That Cow/">
 
 
 
 
 
-  <title>POJ 1064 Cable master(二分查找) | SylarChen的个人博客</title>
+  <title>Catch That Cow (bfs) | SylarChen的个人博客</title>
   
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/19/关于切绳子问题的题解/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/06/Catch That Cow/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sylar Chen">
@@ -312,7 +312,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">POJ 1064 Cable master(二分查找)</h2>
+          <h2 class="post-title" itemprop="name headline">Catch That Cow (bfs)</h2>
         
 
         <div class="post-meta">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-19T22:10:08+08:00">
-                2019-03-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-06T00:02:28+08:00">
+                2019-04-06
               </time>
             
 
@@ -363,73 +363,77 @@
 
       
         <ul>
-<li>Time limit: 1000 ms</li>
-<li>Memory limit: 10000 kB</li>
+<li>Time limit: 2000 ms</li>
+<li>Memory limit: 65536 kB</li>
 </ul>
-<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>有N条绳子，它们的长度分别为Li。如果从它们中切割出K条长度相同的</p>
-<p>绳子，这K条绳子每条最长能有多长？答案保留到小数点后2位。</p>
-<p>  <a href="https://www.luogu.org/problemnew/show/P1577" target="_blank" rel="noopener">洛谷P1577</a><br>,  <a href="http://poj.org/problem?id=1064" target="_blank" rel="noopener">POJ 1064</a></p>
+<p>HDU - 2717 ; <a href="http://poj.org/problem?id=3278" target="_blank" rel="noopener">POJ - 3278</a></p>
+<h3 id="题干："><a href="#题干：" class="headerlink" title="题干："></a>题干：</h3><h4 id="Description"><a href="#Description" class="headerlink" title="Description:"></a>Description:</h4><p>Farmer John has been informed of the location of a fugitive cow and wants to catch her immediately. He starts at a point N (0 ≤ N ≤ 100,000) on a number line and the cow is at a point K (0 ≤ K ≤ 100,000) on the same number line. Farmer John has two modes of transportation: walking and teleporting.</p>
 <ul>
-<li>2019/3/19  <a id="more"></a>
+<li>Walking: FJ can move from any point X to the points X - 1 or X + 1 in a single minute</li>
+<li>Teleporting: FJ can move from any point X to the point 2 × X in a single minute.</li>
+</ul>
+<p>If the cow, unaware of its pursuit, does not move at all, how long does it take for Farmer John to retrieve it?</p>
+<h4 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h4><p>Line 1: Two space-separated integers: N and K</p>
+<h4 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h4><p>Line 1: The least amount of time, in minutes, it takes for Farmer John to catch the fugitive cow.</p>
+<ul>
+<li>2019/3/31  <a id="more"></a>
 </li>
 </ul>
-<h3 id="Input："><a href="#Input：" class="headerlink" title="Input："></a>Input：</h3><p>第一行两个整数N和K，接下来N行，描述了每条绳子的长度Li。</p>
-<h3 id="Output："><a href="#Output：" class="headerlink" title="Output："></a>Output：</h3><p>切割后每条绳子的最大长度。</p>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><pre><code>4 11
-8.02
-7.43
-4.57
-5.39
-</code></pre><h3 id="Sample-Onput："><a href="#Sample-Onput：" class="headerlink" title="Sample Onput："></a>Sample Onput：</h3><pre><code>2.00
-</code></pre><h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>对于100%的数据 0&lt;Li&lt;=100000.00 0&lt;n&lt;=10000 0&lt;k&lt;=10000</p>
-<hr>
-<h3 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h3><ul>
-<li>答案单调性：剪得越短可分成的越显然单调。</li>
-<li>答案容易验证：O(n) 时间内贪心枚举看最终能形成的电线数是否大于等于 k 即可。</li>
+<h4 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h4><pre><code>5 11
+</code></pre><h4 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h4><pre><code>4
+</code></pre><h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><ul>
+<li>广度优先搜索的经典题目</li>
 </ul>
-<p>很明显，这是一个二分查找问题</p>
-<h3 id="本题坑点："><a href="#本题坑点：" class="headerlink" title="本题坑点："></a>本题坑点：</h3><ul>
-<li>答案用double容易丢精度</li>
-<li>二分过程要处理<code>mid==0</code>的情况，不然会出现除以0的未定义行为</li>
+<ul>
+<li>我们使用一个队列来维护当前已经走到的所有的点，并且<br>用一个数组time[]记录使用的时间。我们每次从队列中取出一个点，<br>然后执行之前的两种操作（N+=1，N*=2），若得到的值j未曾加入到队列中，就<br>将j放到队列里，并令time[j] = time[i] + 1。当第一次j == K时，此<br>时的distj便为答案。<br>因为我们使用的是广搜，所以说明当我们找到了鞆要走i步才能<br>到达的点时，所有小于i步就能到达的点已经被找过了。所以，<br>我们每次找到一个新的点，这个点此时的time一定为可能的最小值。</li>
 </ul>
-<h3 id="Source-Code："><a href="#Source-Code：" class="headerlink" title="Source Code："></a>Source Code：</h3><pre><code>#include &lt;iostream&gt;
-#include &lt;cstdio&gt;
-#include &lt;cmath&gt;
+<h3 id="Source-Code"><a href="#Source-Code" class="headerlink" title="Source Code"></a>Source Code</h3><pre><code>#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+#include &lt;queue&gt;
+
 using namespace std;
+
+queue&lt;int&gt; q;
+int N, K;
+int time[100010];
+int visited[100010];//标记是否走过
+
+
+int solve(){
+    while (!q.empty() ){
+        int now = q.front();
+        q.pop();
+        int next;
+        for (int i = 0; i &lt; 3; i++){
+            if (i == 0) next = now - 1;
+            if (i == 1) next = now + 1;
+            if (i == 2) next = now * 2;
+            if (next &lt; 0 || next &gt; 100010) continue;//注意不要越界
+            if (!visited[next]){
+                q.push(next);
+                visited[next] = 1;
+                time[next] = time[now] + 1;
+            }
+            if (next == K) return time[next];
+        }
+    }
+    return 0;
+}
 
 
 int main(){
-    int T, n, ret = 0;
-    double len, ans = 0;
-    int Max = 100000000;
-    cin &gt;&gt; T &gt;&gt; n;
-    int arr[T];
+    memset(time, 0, sizeof(time) );
+    memset(visited, 0, sizeof(visited) );
 
-    for (int i = 0; i &lt; T; i++){
-        scanf(&quot;%lf&quot;, &amp;len);
-        arr[i] = len * 100;
-        Max = max(arr[i], Max);
+    cin &gt;&gt; N &gt;&gt; K;
+    if (N &gt;= K){
+        cout &lt;&lt; N - K &lt;&lt; endl;
+    } else {
+        visited[N] = 1;
+        time[N] = 0;
+        q.push(N);
+        cout &lt;&lt; solve() &lt;&lt; endl;
     }
-    int l = 0, r = Max, mid = 0, o = 0;
-    while (l &lt;= r){
-        o = 0;
-        mid = (l + r) &gt;&gt; 1;
-        //处理mid == 0
-        if (mid == 0)
-            break;
-        for (int i = 0; i &lt; T; i++){
-            o = o + arr[i] / mid;
-        }
-        if (o &lt; n){
-            r = mid - 1;
-        } else {
-            l = mid + 1;
-            ret = max(ret, mid);
-        }
-    }
-
-
-    printf(&quot;%.2f\n&quot;, (double)ret / 100);
 
 
     return 0;
@@ -484,8 +488,8 @@ int main(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/12/关于ubuntu源代码安装包的编译与安装/" rel="next" title="关于ubuntu源代码安装包的编译与安装">
-                <i class="fa fa-chevron-left"></i> 关于ubuntu源代码安装包的编译与安装
+              <a href="/2019/04/05/HDU 2181 哈密顿绕行世界问题 (dfs)/" rel="next" title="HDU 2181 哈密顿绕行世界问题 (dfs)">
+                <i class="fa fa-chevron-left"></i> HDU 2181 哈密顿绕行世界问题 (dfs)
               </a>
             
           </div>
@@ -494,8 +498,8 @@ int main(){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/05/HDU 2181 哈密顿绕行世界问题 (dfs)/" rel="prev" title="HDU 2181 哈密顿绕行世界问题 (dfs)">
-                HDU 2181 哈密顿绕行世界问题 (dfs) <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/06/POJ1013-Counterfeit Dollar/" rel="prev" title="POJ1013-Counterfeit Dollar">
+                POJ1013-Counterfeit Dollar <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -628,7 +632,7 @@ int main(){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Input："><span class="nav-number">2.</span> <span class="nav-text">Input：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output："><span class="nav-number">3.</span> <span class="nav-text">Output：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sample-Input"><span class="nav-number">4.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sample-Onput："><span class="nav-number">5.</span> <span class="nav-text">Sample Onput：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#说明"><span class="nav-number">6.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解："><span class="nav-number">7.</span> <span class="nav-text">题解：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本题坑点："><span class="nav-number">8.</span> <span class="nav-text">本题坑点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Source-Code："><span class="nav-number">9.</span> <span class="nav-text">Source Code：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题干："><span class="nav-number">1.</span> <span class="nav-text">题干：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Input"><span class="nav-number">1.2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Output"><span class="nav-number">1.3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Input"><span class="nav-number">1.4.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Output"><span class="nav-number">1.5.</span> <span class="nav-text">Sample Output:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Source-Code"><span class="nav-number">3.</span> <span class="nav-text">Source Code</span></a></li></ol></div>
             
 
           </div>

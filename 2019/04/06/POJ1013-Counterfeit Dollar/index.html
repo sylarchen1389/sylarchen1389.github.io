@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="Time limit: 1000 ms Memory limit: 10000 kB  Description有N条绳子，它们的长度分别为Li。如果从它们中切割出K条长度相同的 绳子，这K条绳子每条最长能有多长？答案保留到小数点后2位。   洛谷P1577,  POJ 1064  2019/3/19">
+<meta name="description" content="Time limit: 1000 ms Memory limit: 32768 kB  题干：Description:Sally Jones has a dozen Voyageur silver dollars. However, only eleven of the coins are true silver dollars; one coin is counterfeit even tho">
 <meta property="og:type" content="article">
-<meta property="og:title" content="POJ 1064 Cable master(二分查找)">
-<meta property="og:url" content="http://yoursite.com/2019/03/19/关于切绳子问题的题解/index.html">
+<meta property="og:title" content="POJ1013-Counterfeit Dollar">
+<meta property="og:url" content="http://yoursite.com/2019/04/06/POJ1013-Counterfeit Dollar/index.html">
 <meta property="og:site_name" content="SylarChen的个人博客">
-<meta property="og:description" content="Time limit: 1000 ms Memory limit: 10000 kB  Description有N条绳子，它们的长度分别为Li。如果从它们中切割出K条长度相同的 绳子，这K条绳子每条最长能有多长？答案保留到小数点后2位。   洛谷P1577,  POJ 1064  2019/3/19">
+<meta property="og:description" content="Time limit: 1000 ms Memory limit: 32768 kB  题干：Description:Sally Jones has a dozen Voyageur silver dollars. However, only eleven of the coins are true silver dollars; one coin is counterfeit even tho">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-05T16:22:54.888Z">
+<meta property="og:updated_time" content="2019-04-05T16:22:50.385Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="POJ 1064 Cable master(二分查找)">
-<meta name="twitter:description" content="Time limit: 1000 ms Memory limit: 10000 kB  Description有N条绳子，它们的长度分别为Li。如果从它们中切割出K条长度相同的 绳子，这K条绳子每条最长能有多长？答案保留到小数点后2位。   洛谷P1577,  POJ 1064  2019/3/19">
+<meta name="twitter:title" content="POJ1013-Counterfeit Dollar">
+<meta name="twitter:description" content="Time limit: 1000 ms Memory limit: 32768 kB  题干：Description:Sally Jones has a dozen Voyageur silver dollars. However, only eleven of the coins are true silver dollars; one coin is counterfeit even tho">
 
 
 
@@ -130,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/19/关于切绳子问题的题解/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/06/POJ1013-Counterfeit Dollar/">
 
 
 
 
 
-  <title>POJ 1064 Cable master(二分查找) | SylarChen的个人博客</title>
+  <title>POJ1013-Counterfeit Dollar | SylarChen的个人博客</title>
   
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/19/关于切绳子问题的题解/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/06/POJ1013-Counterfeit Dollar/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sylar Chen">
@@ -312,7 +312,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">POJ 1064 Cable master(二分查找)</h2>
+          <h2 class="post-title" itemprop="name headline">POJ1013-Counterfeit Dollar</h2>
         
 
         <div class="post-meta">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-19T22:10:08+08:00">
-                2019-03-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-06T00:20:54+08:00">
+                2019-04-06
               </time>
             
 
@@ -364,73 +364,92 @@
       
         <ul>
 <li>Time limit: 1000 ms</li>
-<li>Memory limit: 10000 kB</li>
+<li>Memory limit: 32768 kB</li>
 </ul>
-<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>有N条绳子，它们的长度分别为Li。如果从它们中切割出K条长度相同的</p>
-<p>绳子，这K条绳子每条最长能有多长？答案保留到小数点后2位。</p>
-<p>  <a href="https://www.luogu.org/problemnew/show/P1577" target="_blank" rel="noopener">洛谷P1577</a><br>,  <a href="http://poj.org/problem?id=1064" target="_blank" rel="noopener">POJ 1064</a></p>
+<h3 id="题干："><a href="#题干：" class="headerlink" title="题干："></a>题干：</h3><h4 id="Description"><a href="#Description" class="headerlink" title="Description:"></a>Description:</h4><p>Sally Jones has a dozen Voyageur silver dollars. However, only eleven of the coins are true silver dollars; one coin is counterfeit even though its color and size make it indistinguishable from the real silver dollars. The counterfeit coin has a different weight from the other coins but Sally does not know if it is heavier or lighter than the real coins.<br>Happily, Sally has a friend who loans her a very accurate balance scale. The friend will permit Sally three weighings to find the counterfeit coin. For instance, if Sally weighs two coins against each other and the scales balance then she knows these two coins are true. Now if Sally weighs<br>one of the true coins against a third coin and the scales do not balance then Sally knows the third coin is counterfeit and she can tell whether it is light or heavy depending on whether the balance on which it is placed goes up or down, respectively.<br>By choosing her weighings carefully, Sally is able to ensure that she will find the counterfeit coin with exactly three weighings.</p>
+<h4 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h4><p>The first line of input is an integer n (n &gt; 0) specifying the number of cases to follow. Each case consists of three lines of input, one for each weighing. Sally has identified each of the coins with the letters A–L. Information on a weighing will be given by two strings of letters and then one of the words `up’’,`down’’, or ``even’’. The first string of letters will represent the coins on the left balance; the second string, the coins on the right balance. (Sally will always place the same number of coins on the right balance as on the left balance.) The word in the third position will tell whether the right side of the balance goes up, down, or remains even.</p>
+<h4 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h4><p>For each case, the output will identify the counterfeit coin by its letter and tell whether it is heavy or light. The solution will always be uniquely determined.</p>
 <ul>
-<li>2019/3/19  <a id="more"></a>
+<li>2019/3/31  <a id="more"></a>
 </li>
 </ul>
-<h3 id="Input："><a href="#Input：" class="headerlink" title="Input："></a>Input：</h3><p>第一行两个整数N和K，接下来N行，描述了每条绳子的长度Li。</p>
-<h3 id="Output："><a href="#Output：" class="headerlink" title="Output："></a>Output：</h3><p>切割后每条绳子的最大长度。</p>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><pre><code>4 11
-8.02
-7.43
-4.57
-5.39
-</code></pre><h3 id="Sample-Onput："><a href="#Sample-Onput：" class="headerlink" title="Sample Onput："></a>Sample Onput：</h3><pre><code>2.00
-</code></pre><h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>对于100%的数据 0&lt;Li&lt;=100000.00 0&lt;n&lt;=10000 0&lt;k&lt;=10000</p>
-<hr>
-<h3 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h3><ul>
-<li>答案单调性：剪得越短可分成的越显然单调。</li>
-<li>答案容易验证：O(n) 时间内贪心枚举看最终能形成的电线数是否大于等于 k 即可。</li>
+<h4 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h4><pre><code>1
+ABCD EFGH even
+ABCI EFJK up
+ABIJ EFGH even
+</code></pre><h4 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h4><pre><code>K is the counterfeit coin and it is light.
+</code></pre><h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><ul>
+<li><p>大意就是给你12个硬币，并且有一个是假的。现在用天平称量并且三次并把答案告诉你，要你计算出哪一个是假币</p>
+</li>
+<li><p><del>暴力</del>枚举搜索</p>
+</li>
 </ul>
-<p>很明显，这是一个二分查找问题</p>
-<h3 id="本题坑点："><a href="#本题坑点：" class="headerlink" title="本题坑点："></a>本题坑点：</h3><ul>
-<li>答案用double容易丢精度</li>
-<li>二分过程要处理<code>mid==0</code>的情况，不然会出现除以0的未定义行为</li>
+<ul>
+<li>我们只需要枚举不同的硬币，假设它为假币，并假设它的重量为<br>更重或更轻，然后带入到给出的情况中，看是否合理。合理的<br>话，我们假设的情况就成立。</li>
 </ul>
-<h3 id="Source-Code："><a href="#Source-Code：" class="headerlink" title="Source Code："></a>Source Code：</h3><pre><code>#include &lt;iostream&gt;
-#include &lt;cstdio&gt;
-#include &lt;cmath&gt;
+<h3 id="Source-Code"><a href="#Source-Code" class="headerlink" title="Source Code"></a>Source Code</h3><pre><code>#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+
 using namespace std;
+
+char Left[3][7];
+char Right[3][7];
+char result[3][7];
+
+
+bool isfake(char c, bool light){
+    for (int i = 0; i &lt; 3; i++){
+        char* pleft;
+        char* pright;
+
+        if (light){
+            pleft = Left[i];
+            pright = Right[i];
+        } else {
+            pleft = Right[i];
+            pright = Left[i];
+        }
+
+
+        switch (result[i][0]){
+        case &apos;u&apos;:
+            if (strchr(pright, c) == NULL) return false;
+            break;
+        case &apos;e&apos;:
+            if (strchr(pleft, c) || strchr(pright, c) ) return false;
+            break;
+        case &apos;d&apos;:
+            if (strchr(pleft, c) == NULL) return false;
+            break;
+        }
+
+
+    }
+    return true;
+
+}
 
 
 int main(){
-    int T, n, ret = 0;
-    double len, ans = 0;
-    int Max = 100000000;
-    cin &gt;&gt; T &gt;&gt; n;
-    int arr[T];
+    int t;
+    cin &gt;&gt; t;
+    while (t--){
+        for (int i = 0; i &lt; 3; i++)
+            cin &gt;&gt; Left[i] &gt;&gt; Right[i] &gt;&gt; result[i];
 
-    for (int i = 0; i &lt; T; i++){
-        scanf(&quot;%lf&quot;, &amp;len);
-        arr[i] = len * 100;
-        Max = max(arr[i], Max);
-    }
-    int l = 0, r = Max, mid = 0, o = 0;
-    while (l &lt;= r){
-        o = 0;
-        mid = (l + r) &gt;&gt; 1;
-        //处理mid == 0
-        if (mid == 0)
-            break;
-        for (int i = 0; i &lt; T; i++){
-            o = o + arr[i] / mid;
+        for (char c = &apos;A&apos;; c &lt;= &apos;L&apos;; c++){
+            if (isfake(c, true) ){
+                cout &lt;&lt; c &lt;&lt; &quot; is the counterfeit coin and it is light. &quot; &lt;&lt; endl;
+                break;
+            }
+            if (isfake(c, false) ){
+                cout &lt;&lt; c &lt;&lt; &quot; is the counterfeit coin and it is heavy. &quot; &lt;&lt; endl;
+                break;
+            }
+
         }
-        if (o &lt; n){
-            r = mid - 1;
-        } else {
-            l = mid + 1;
-            ret = max(ret, mid);
-        }
+
     }
-
-
-    printf(&quot;%.2f\n&quot;, (double)ret / 100);
-
 
     return 0;
 }
@@ -484,8 +503,8 @@ int main(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/12/关于ubuntu源代码安装包的编译与安装/" rel="next" title="关于ubuntu源代码安装包的编译与安装">
-                <i class="fa fa-chevron-left"></i> 关于ubuntu源代码安装包的编译与安装
+              <a href="/2019/04/06/Catch That Cow/" rel="next" title="Catch That Cow (bfs)">
+                <i class="fa fa-chevron-left"></i> Catch That Cow (bfs)
               </a>
             
           </div>
@@ -494,8 +513,8 @@ int main(){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/05/HDU 2181 哈密顿绕行世界问题 (dfs)/" rel="prev" title="HDU 2181 哈密顿绕行世界问题 (dfs)">
-                HDU 2181 哈密顿绕行世界问题 (dfs) <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/06/愚人节快乐~/" rel="prev" title="愚人节快乐~">
+                愚人节快乐~ <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -628,7 +647,7 @@ int main(){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Input："><span class="nav-number">2.</span> <span class="nav-text">Input：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Output："><span class="nav-number">3.</span> <span class="nav-text">Output：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sample-Input"><span class="nav-number">4.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sample-Onput："><span class="nav-number">5.</span> <span class="nav-text">Sample Onput：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#说明"><span class="nav-number">6.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解："><span class="nav-number">7.</span> <span class="nav-text">题解：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本题坑点："><span class="nav-number">8.</span> <span class="nav-text">本题坑点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Source-Code："><span class="nav-number">9.</span> <span class="nav-text">Source Code：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题干："><span class="nav-number">1.</span> <span class="nav-text">题干：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Input"><span class="nav-number">1.2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Output"><span class="nav-number">1.3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Input"><span class="nav-number">1.4.</span> <span class="nav-text">Sample Input:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Output"><span class="nav-number">1.5.</span> <span class="nav-text">Sample Output:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题解"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Source-Code"><span class="nav-number">3.</span> <span class="nav-text">Source Code</span></a></li></ol></div>
             
 
           </div>
