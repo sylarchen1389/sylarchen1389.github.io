@@ -305,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/09/KNN/KNN_classify/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/09/knn/knn/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sylar Chen">
@@ -324,7 +324,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/05/09/KNN/KNN_classify/" itemprop="url">（一）K近邻算法的实现</a></h2>
+                <a class="post-title-link" href="/2019/05/09/knn/knn/" itemprop="url">（一）K近邻算法的实现</a></h2>
         
 
         <div class="post-meta">
@@ -401,7 +401,8 @@
             <h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>k 临近算法，是机器学习（监督学习）的一种经典的分类算（当然也能解决其他的一些问题，例如线性回归）</p>
 <p>官方解释：存在一个样本数据集，也称作训练样本集，并且样本中每个数据都存在标签，即我们知道样本集中每一数据与所属分类的对应关系，输入没有标签的新数据后，将新数据的每个特征与样本集中的数据对应的特征进行比较，然后算法提取样本集中特征最相似的数据（最近邻）的分类标签。一般来说，我们只选择样本集中前 k 个最相似的数据，这就是 k-近邻算法中 k 的出处，通常 k 是不大于 20 的整数，最后，选择 k 个最相似的数据中出现次数最多的分类，作为新数据的分类。</p>
 <p>我的理解：将原有样本集视为一个模型（KNN 非常特殊，可以视为没有，为了和其他模型统一，我把原本的数据集理解为一个模型），对于来一个样本，把他放在原数据集中，从它临近的类别来判断它的类别，就好像一朵花周围都是鸢尾花，那这朵花大概率也是鸢尾花（当然鸢尾花也有各种类别，下文就将拿鸢尾花这个经典的数据集来测试我们实现的 K 近邻算法），这里的 K 就是考虑的近邻的个数，是一个超参数。而算法的目的就是找出目标样本最近的 K 个样本，分析各个样本的类别，来决定样本的类别。</p>
-<h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><h4 id="测试数据来源与加载"><a href="#测试数据来源与加载" class="headerlink" title="测试数据来源与加载"></a>测试数据来源与加载</h4><p>这里，我们使用 sklearn 封装好的数据集。<br>sklearn 的数据集有好多个种</p>
+<pre><code>&lt;!-- more --&gt;
+</code></pre><h1 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h1><h4 id="测试数据来源与加载"><a href="#测试数据来源与加载" class="headerlink" title="测试数据来源与加载"></a>测试数据来源与加载</h4><p>这里，我们使用 sklearn 封装好的数据集。<br>sklearn 的数据集有好多个种</p>
 <ul>
 <li>自带的小数据集（packaged dataset）：sklearn.datasets.load_<name></name></li>
 <li>可在线下载的数据集（Downloaded Dataset）：sklearn.datasets.fetch_<name></name></li>
@@ -774,11 +775,11 @@
 <h3 id="题干"><a href="#题干" class="headerlink" title="题干:"></a>题干:</h3><h4 id="Description"><a href="#Description" class="headerlink" title="Description:"></a>Description:</h4><p>Xenia has a set of weights and pan scales. Each weight has an integer weight from 1 to 10 kilos. Xenia is going to play with scales and weights a little. For this, she puts weights on the scalepans, one by one. The first weight goes on the left scalepan, the second weight goes on the right scalepan, the third one goes on the left scalepan, the fourth one goes on the right scalepan and so on. Xenia wants to put the total of m weights on the scalepans.</p>
 <p>Simply putting weights on the scales is not interesting, so Xenia has set some rules. First, she does not put on the scales two consecutive weights of the same weight. That is, the weight that goes i-th should be different from the (i + 1)-th weight for any i (1 ≤ i &lt; m). Second, every time Xenia puts a weight on some scalepan, she wants this scalepan to outweigh the other one. That is, the sum of the weights on the corresponding scalepan must be strictly greater than the sum on the other pan.</p>
 <p>You are given all types of weights available for Xenia. You can assume that the girl has an infinite number of weights of each specified type. Your task is to help Xenia lay m weights on ​​the scales or to say that it can’t be done.</p>
-<h4 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h4><p>The first line contains a string consisting of exactly ten zeroes and ones: the i-th (i ≥ 1) character in the line equals “1” if Xenia has i kilo weights, otherwise the character equals “0”. The second line contains integer m (1 ≤ m ≤ 1000).</p>
+<pre><code>&lt;!-- more --&gt;
+</code></pre><h4 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h4><p>The first line contains a string consisting of exactly ten zeroes and ones: the i-th (i ≥ 1) character in the line equals “1” if Xenia has i kilo weights, otherwise the character equals “0”. The second line contains integer m (1 ≤ m ≤ 1000).</p>
 <h4 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h4><p>In the first line print “YES”, if there is a way to put m weights on the scales by all rules. Otherwise, print in the first line “NO”. If you can put m weights on the scales, then print in the next line m integers — the weights’ weights in the order you put them on the scales.</p>
 <p>If there are multiple solutions, you can print any of them.</p>
-<pre><code>&lt;!-- more --&gt;
-</code></pre><h4 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h4><pre><code>0000000101
+<h4 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h4><pre><code>0000000101
 3
 </code></pre><h4 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h4><pre><code>YES
 8 10 8
