@@ -93,23 +93,23 @@
 <meta name="description" content="原理k 临近算法，是机器学习（监督学习）的一种经典的分类算（当然也能解决其他的一些问题，例如线性回归） 官方解释：存在一个样本数据集，也称作训练样本集，并且样本中每个数据都存在标签，即我们知道样本集中每一数据与所属分类的对应关系，输入没有标签的新数据后，将新数据的每个特征与样本集中的数据对应的特征进行比较，然后算法提取样本集中特征最相似的数据（最近邻）的分类标签。一般来说，我们只选择样本集中前 k">
 <meta property="og:type" content="article">
 <meta property="og:title" content="K近邻算法的实现">
-<meta property="og:url" content="http://sylarchen1389.github.io/2019/05/09/knn/knn/index.html">
+<meta property="og:url" content="http://sylarchen1389.github.io/2019/05/09/knn/index.html">
 <meta property="og:site_name" content="SylarChen的个人博客">
 <meta property="og:description" content="原理k 临近算法，是机器学习（监督学习）的一种经典的分类算（当然也能解决其他的一些问题，例如线性回归） 官方解释：存在一个样本数据集，也称作训练样本集，并且样本中每个数据都存在标签，即我们知道样本集中每一数据与所属分类的对应关系，输入没有标签的新数据后，将新数据的每个特征与样本集中的数据对应的特征进行比较，然后算法提取样本集中特征最相似的数据（最近邻）的分类标签。一般来说，我们只选择样本集中前 k">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://raw.githubusercontent.com/sylarchen1389/sylarchen1389.github.io/master/image/578330-20170610195748356-1518693081.png">
-<meta property="og:image" content="http://sylarchen1389.github.io/2019/05/09/knn/knn/iris_1.png">
-<meta property="og:image" content="http://sylarchen1389.github.io/2019/05/09/knn/knn/iris_2.png">
-<meta property="og:image" content="http://sylarchen1389.github.io/2019/05/09/knn/knn/train.png">
-<meta property="og:image" content="http://sylarchen1389.github.io/2019/05/09/knn/knn/predict.png">
-<meta property="og:image" content="http://sylarchen1389.github.io/2019/05/09/knn/knn/score.png">
-<meta property="og:image" content="http://sylarchen1389.github.io/2019/05/09/knn/knn/sk_knn.png">
-<meta property="og:image" content="http://sylarchen1389.github.io/2019/05/09/knn/knn/sk_knn_2.png">
-<meta property="og:image" content="http://sylarchen1389.github.io/2019/05/09/knn/knn/sk_knn_3.png">
-<meta property="og:image" content="http://sylarchen1389.github.io/2019/05/09/knn/knn/for.png">
-<meta property="og:image" content="http://sylarchen1389.github.io/2019/05/09/knn/knn/p.png">
-<meta property="og:image" content="http://sylarchen1389.github.io/2019/05/09/knn/knn/p_2.png">
-<meta property="og:updated_time" content="2019-05-09T14:17:02.614Z">
+<meta property="og:image" content="http://sylarchen1389.github.io/2019/05/09/knn/iris_1.png">
+<meta property="og:image" content="http://sylarchen1389.github.io/2019/05/09/knn/iris_2.png">
+<meta property="og:image" content="http://sylarchen1389.github.io/2019/05/09/knn/train.png">
+<meta property="og:image" content="http://sylarchen1389.github.io/2019/05/09/knn/predict.png">
+<meta property="og:image" content="http://sylarchen1389.github.io/2019/05/09/knn/score.png">
+<meta property="og:image" content="http://sylarchen1389.github.io/2019/05/09/knn/sk_knn.png">
+<meta property="og:image" content="http://sylarchen1389.github.io/2019/05/09/knn/sk_knn_2.png">
+<meta property="og:image" content="http://sylarchen1389.github.io/2019/05/09/knn/sk_knn_3.png">
+<meta property="og:image" content="http://sylarchen1389.github.io/2019/05/09/knn/for.png">
+<meta property="og:image" content="http://sylarchen1389.github.io/2019/05/09/knn/p.png">
+<meta property="og:image" content="http://sylarchen1389.github.io/2019/05/09/knn/p_2.png">
+<meta property="og:updated_time" content="2019-05-09T14:17:04.125Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="K近邻算法的实现">
 <meta name="twitter:description" content="原理k 临近算法，是机器学习（监督学习）的一种经典的分类算（当然也能解决其他的一些问题，例如线性回归） 官方解释：存在一个样本数据集，也称作训练样本集，并且样本中每个数据都存在标签，即我们知道样本集中每一数据与所属分类的对应关系，输入没有标签的新数据后，将新数据的每个特征与样本集中的数据对应的特征进行比较，然后算法提取样本集中特征最相似的数据（最近邻）的分类标签。一般来说，我们只选择样本集中前 k">
@@ -143,7 +143,7 @@
 
 
 
-  <link rel="canonical" href="http://sylarchen1389.github.io/2019/05/09/knn/knn/">
+  <link rel="canonical" href="http://sylarchen1389.github.io/2019/05/09/knn/">
 
 
 
@@ -318,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://sylarchen1389.github.io/2019/05/09/knn/knn/">
+    <link itemprop="mainEntityOfPage" href="http://sylarchen1389.github.io/2019/05/09/knn/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sylar Chen">
@@ -347,7 +347,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-09T22:17:02+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-09T22:09:33+08:00">
                 2019-05-09
               </time>
             
@@ -424,7 +424,7 @@
 <p>这些数据集都可以在官网上查到，以鸢尾花为例，可以在官网上找到 demo，<a href="http://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html" target="_blank" rel="noopener">http://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html</a></p>
 <p>我们使用鸢尾花的数据集</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line">iris=datasets.load_iris()</span><br></pre></td></tr></table></figure>
-<p>使用<code>iris.key()</code>我们可以看到输出了<br><img src="/2019/05/09/knn/knn/iris_1.png" alt="iris_1"></p>
+<p>使用<code>iris.key()</code>我们可以看到输出了<br><img src="/2019/05/09/knn/iris_1.png" alt="iris_1"></p>
 <p><code>DESCR</code>是特征的描述</p>
 <p><code>feature_names</code>是特征的名字</p>
 <p><code>data</code>是特征数据</p>
@@ -433,7 +433,7 @@
 <p>方便后面操作，我们令</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = iris.data</span><br><span class="line">y = iris.target</span><br></pre></td></tr></table></figure>
 <p>可以看到：</p>
-<p><img src="/2019/05/09/knn/knn/iris_2.png" alt="iris_2"></p>
+<p><img src="/2019/05/09/knn/iris_2.png" alt="iris_2"></p>
 <p>这个数据集有 150 个样本，4 个特征，可以看到，X 与 Y 的数目是对应的</p>
 <p>关于这个数据集的详细内容，可以通过<br><code>print(iris.DESCR)</code><br>来查看，详细内容在 sklearn 官网都有</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">OUTPUT：</span><br><span class="line"></span><br><span class="line">    .. _iris_dataset:</span><br><span class="line"></span><br><span class="line">    Iris plants dataset</span><br><span class="line">    --------------------</span><br><span class="line"></span><br><span class="line">    **Data Set Characteristics:**</span><br><span class="line"></span><br><span class="line">        :Number of Instances: <span class="number">150</span> (<span class="number">50</span> <span class="keyword">in</span> each of three classes)</span><br><span class="line">        :Number of Attributes: <span class="number">4</span> numeric, predictive attributes <span class="keyword">and</span> the <span class="class"><span class="keyword">class</span></span></span><br><span class="line"><span class="class">        :</span>Attribute Information:</span><br><span class="line">            - sepal length <span class="keyword">in</span> cm</span><br><span class="line">            - sepal width <span class="keyword">in</span> cm</span><br><span class="line">            - petal length <span class="keyword">in</span> cm</span><br><span class="line">            - petal width <span class="keyword">in</span> cm</span><br><span class="line">            - <span class="class"><span class="keyword">class</span>:</span></span><br><span class="line">                    - Iris-Setosa</span><br><span class="line">                    - Iris-Versicolour</span><br><span class="line">                    - Iris-Virginica</span><br><span class="line"></span><br><span class="line">        :Summary Statistics:</span><br><span class="line"></span><br><span class="line">        ============== ==== ==== ======= ===== ====================</span><br><span class="line">                        Min  Max   Mean    SD   Class Correlation</span><br><span class="line">        ============== ==== ==== ======= ===== ====================</span><br><span class="line">        sepal length:   <span class="number">4.3</span>  <span class="number">7.9</span>   <span class="number">5.84</span>   <span class="number">0.83</span>    <span class="number">0.7826</span></span><br><span class="line">        sepal width:    <span class="number">2.0</span>  <span class="number">4.4</span>   <span class="number">3.05</span>   <span class="number">0.43</span>   <span class="number">-0.4194</span></span><br><span class="line">        petal length:   <span class="number">1.0</span>  <span class="number">6.9</span>   <span class="number">3.76</span>   <span class="number">1.76</span>    <span class="number">0.9490</span>  (high!)</span><br><span class="line">        petal width:    <span class="number">0.1</span>  <span class="number">2.5</span>   <span class="number">1.20</span>   <span class="number">0.76</span>    <span class="number">0.9565</span>  (high!)</span><br><span class="line">        ============== ==== ==== ======= ===== ====================</span><br><span class="line"></span><br><span class="line">        :Missing Attribute Values: <span class="keyword">None</span></span><br><span class="line">        :Class Distribution: <span class="number">33.3</span>% <span class="keyword">for</span> each of <span class="number">3</span> classes.</span><br><span class="line">        .....</span><br></pre></td></tr></table></figure>
@@ -444,35 +444,35 @@
 <script type="math/tex; mode=display">\sqrt[n]{\sum_{i=0}^N(x_i^{(a)} - x_i^{(b)})^n}</script><p>下面的代码实现，我用大家都比较熟悉的欧拉距离实现</p>
 <h4 id="Code-python"><a href="#Code-python" class="headerlink" title="Code (python)"></a>Code (python)</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">KNNClassifier</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, k)</span>:</span></span><br><span class="line">        <span class="string">"""初始化kNN分类器"""</span></span><br><span class="line">        <span class="keyword">assert</span> k &gt;= <span class="number">1</span>, <span class="string">"k must be valid"</span></span><br><span class="line">        self.k = k</span><br><span class="line">        <span class="string">"""需要注意的是，因为kNN是典型的非参数\</span></span><br><span class="line"><span class="string">        学习算法，对于这个算法，我们需要有成员\</span></span><br><span class="line"><span class="string">        来储存已有的数据"""</span></span><br><span class="line">        self._X_train = <span class="keyword">None</span></span><br><span class="line">        self._y_train = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">fit</span><span class="params">(self, X_train, y_train)</span>:</span></span><br><span class="line">        <span class="string">"""根据训练数据集X_train和y_train训练kNN分类器"""</span></span><br><span class="line">        <span class="keyword">assert</span> X_train.shape[<span class="number">0</span>] == y_train.shape[<span class="number">0</span>], \</span><br><span class="line">            <span class="string">"the size of X_train must be equal to the size of y_train"</span></span><br><span class="line">        <span class="keyword">assert</span> self.k &lt;= X_train.shape[<span class="number">0</span>], \</span><br><span class="line">            <span class="string">"the size of X_train must be at least k."</span></span><br><span class="line"></span><br><span class="line">        self._X_train = X_train</span><br><span class="line">        self._y_train = y_train</span><br><span class="line">        <span class="keyword">return</span> self</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">predict</span><span class="params">(self, X_predict)</span>:</span></span><br><span class="line">        <span class="string">"""给定待预测数据集X_predict，返回表示X_predict的结果向量"""</span></span><br><span class="line">        <span class="keyword">assert</span> self._X_train <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span> <span class="keyword">and</span> self._y_train <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>, \</span><br><span class="line">                <span class="string">"must fit before predict!"</span></span><br><span class="line">        <span class="keyword">assert</span> X_predict.shape[<span class="number">1</span>] == self._X_train.shape[<span class="number">1</span>], \</span><br><span class="line">                <span class="string">"the feature number of X_predict must be equal to X_train"</span></span><br><span class="line"></span><br><span class="line">        y_predict = [self._predict(x) <span class="keyword">for</span> x <span class="keyword">in</span> X_predict]</span><br><span class="line">        <span class="keyword">return</span> np.array(y_predict)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_predict</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        <span class="string">"""给定单个待预测数据x，返回x的预测结果值"""</span></span><br><span class="line">        <span class="keyword">assert</span> x.shape[<span class="number">0</span>] == self._X_train.shape[<span class="number">1</span>], \</span><br><span class="line">            <span class="string">"the feature number of x must be equal to X_train"</span></span><br><span class="line"></span><br><span class="line">        distances = [sqrt(np.sum((x_train - x) ** <span class="number">2</span>))</span><br><span class="line">                     <span class="keyword">for</span> x_train <span class="keyword">in</span> self._X_train]</span><br><span class="line">        nearest = np.argsort(distances)</span><br><span class="line"></span><br><span class="line">        topK_y = [self._y_train[i] <span class="keyword">for</span> i <span class="keyword">in</span> nearest[:self.k]]</span><br><span class="line">        votes = Counter(topK_y)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> votes.most_common(<span class="number">1</span>)[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">accuracy_score</span><span class="params">(y_true, y_predict)</span>:</span></span><br><span class="line">    <span class="string">'''计算y_true和y_predict之间的准确率'''</span></span><br><span class="line">    <span class="keyword">assert</span> y_true.shape[<span class="number">0</span>] == y_predict.shape[<span class="number">0</span>], \</span><br><span class="line">    <span class="string">"the size of y_true must be equal to the size of y_predict"</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> sum(y_true == y_predict) / len(y_true)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">score</span><span class="params">(self, X_test, y_test)</span>:</span></span><br><span class="line">        <span class="string">"""根据测试数据集 X_test 和 y_test 确定当前模型的准确度"""</span></span><br><span class="line"></span><br><span class="line">        y_predict = self.predict(X_test)</span><br><span class="line">        <span class="keyword">return</span> accuracy_score(y_test, y_predict)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__repr__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"KNN(k=%d)"</span> % self.k</span><br></pre></td></tr></table></figure>
 <h1 id="测试我们的算法"><a href="#测试我们的算法" class="headerlink" title="测试我们的算法"></a>测试我们的算法</h1><h3 id="数据分割（train-test-split）"><a href="#数据分割（train-test-split）" class="headerlink" title="数据分割（train_test_split）"></a>数据分割（train_test_split）</h3><p>这里做一个操作，将原先的数据集 X 和 y 按照 0.2 分割成 X_train, X_test, y_train, y_test<br>（len(x_train) = 0.8 *len(x)）,方便后面对我们的算法进行简单的测试</p>
-<p><img src="/2019/05/09/knn/knn/train.png" alt="train"></p>
+<p><img src="/2019/05/09/knn/train.png" alt="train"></p>
 <p>代码就不贴在这了，有兴趣的读者可以访问我的 github 查看</p>
 <h3 id="训练（拟合）"><a href="#训练（拟合）" class="headerlink" title="训练（拟合）"></a>训练（拟合）</h3><p>我们先声明一个我们封装的类的对象，<br>再调用 fit 函数训练</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">my_knn_clf = KNNClassifier(k=<span class="number">3</span>)</span><br><span class="line">my_knn_clf.fit(X_train,y_train)</span><br></pre></td></tr></table></figure>
 <h3 id="预测"><a href="#预测" class="headerlink" title="预测"></a>预测</h3><p>直接调用我们写的 predict 函数</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">y_predict=my_knn_clf.predict(X_test)</span><br></pre></td></tr></table></figure>
-<p><img src="/2019/05/09/knn/knn/predict.png" alt="predict"></p>
-<h1 id="评测（正确率）"><a href="#评测（正确率）" class="headerlink" title="评测（正确率）"></a>评测（正确率）</h1><p>对于鸢尾花这个数据集，最简单的计算计算计算正确率的方法就是与原数据中的 y 比较，一样则分类正确。我们将其加起来，再除以分母，就得到了一个简单的评判标准。<br><img src="/2019/05/09/knn/knn/score.png" alt="score"></p>
+<p><img src="/2019/05/09/knn/predict.png" alt="predict"></p>
+<h1 id="评测（正确率）"><a href="#评测（正确率）" class="headerlink" title="评测（正确率）"></a>评测（正确率）</h1><p>对于鸢尾花这个数据集，最简单的计算计算计算正确率的方法就是与原数据中的 y 比较，一样则分类正确。我们将其加起来，再除以分母，就得到了一个简单的评判标准。<br><img src="/2019/05/09/knn/score.png" alt="score"></p>
 <h1 id="调用-sklearn-实现-KNN"><a href="#调用-sklearn-实现-KNN" class="headerlink" title="调用 sklearn 实现 KNN"></a>调用 sklearn 实现 KNN</h1><p>sklearn 是一个机器学习的库，封装了许多机器学习算法，我们可以直接通过调库来使用相关的算法</p>
 <p>我们通过<code>from sklearn.neighbors import KNeighborsClassifier</code>来加载 sklearn 封装的 KNN 分类器</p>
 <p>然后与上面的操作相同，我们先声明对象，再调用它封装的 fit 函数训练</p>
-<p><img src="/2019/05/09/knn/knn/sk_knn.png" alt="sk_knn"></p>
+<p><img src="/2019/05/09/knn/sk_knn.png" alt="sk_knn"></p>
 <p>同样，sklearn 也为分类器封装了 predict 函数，我们可以直接调用 predict 函数来对预测样本进行分类</p>
-<p><img src="/2019/05/09/knn/knn/sk_knn_2.png" alt="sk_knn_2"></p>
+<p><img src="/2019/05/09/knn/sk_knn_2.png" alt="sk_knn_2"></p>
 <p>我们调 sklearn 封装的 score 函数来测试算法的正确率</p>
-<p><img src="/2019/05/09/knn/knn/sk_knn_3.png" alt="sk_knn_3"></p>
+<p><img src="/2019/05/09/knn/sk_knn_3.png" alt="sk_knn_3"></p>
 <p>当然，sklearn 对 score 函数的实现方式不同，所以评价标准也不同，虽然我们自己实现的 kNN 比 sklearn 的 kNN 得分高，但我们不能说我们的算法比 sklearn 封装的算法好，因为评判标准是不一样的。实际上，如何选择出对于当前问题最合适的算法，也是机器学习的一个难题</p>
 <h1 id="超参数"><a href="#超参数" class="headerlink" title="超参数"></a>超参数</h1><p>超参数的调节是机器学习的一个重要问题，下面举了几个我们实现的算法中出现的超参数，对于如何获取这些超参数的最优值，我会用一些比较简单但时间复杂度可能稍高的方法，其他方法请有兴趣的读者们自行查找</p>
 <p>这里对于超参数的搜索，我们使用 sklearn 封装的 KNN 算法.</p>
 <h4 id="k"><a href="#k" class="headerlink" title="k"></a>k</h4><p>最明显的超参数，就是我<br>们要搜索的近邻的个数 k，到底要检测周围多少个点，才能是我们的算法得到最好的正确率？</p>
 <p>sklearn 中使用的变量名为 n_neighbor</p>
-<p>我们可以简单地写一个 for 循环测试一下<br><img src="/2019/05/09/knn/knn/for.png" alt="for"></p>
+<p>我们可以简单地写一个 for 循环测试一下<br><img src="/2019/05/09/knn/for.png" alt="for"></p>
 <p>可以看到这里显示最好的 k 是 4，而准确率是 0.99166…..</p>
 <h4 id="距离"><a href="#距离" class="headerlink" title="距离"></a>距离</h4><p>我们的算法寻找 k 个最近的近邻的标签进行比较，那么距离的远近是否需要考虑呢？比如距离大一点的样本，对预测的样本的影响比较小，那我们可以给一个比较小的权值，距离比较小的我们就可以给一个较大的权值</p>
 <p>sklearn 中对于是否考虑距离，使用变量 weight，值为 unifrom（不考虑）和 distance（考虑）</p>
 <p>我们同样使用 for 循环进行简单的搜索</p>
-<p><img src="/2019/05/09/knn/knn/p.png" alt="p"></p>
+<p><img src="/2019/05/09/knn/p.png" alt="p"></p>
 <h4 id="明可夫斯基距离相应的-n"><a href="#明可夫斯基距离相应的-n" class="headerlink" title="明可夫斯基距离相应的 n"></a>明可夫斯基距离相应的 n</h4><p>sklearn 中对于明可夫斯基距离相应的 n 使用变量 p 表示，同样我们使用一个 for 循环搜索</p>
-<p><img src="/2019/05/09/knn/knn/p_2.png" alt="p_2"></p>
+<p><img src="/2019/05/09/knn/p_2.png" alt="p_2"></p>
 <h4 id="其他的超参数"><a href="#其他的超参数" class="headerlink" title="其他的超参数"></a>其他的超参数</h4><p>可以查看 sklearn 官网对于 KNN 的算法的手册<br><a href="http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html" target="_blank" rel="noopener">http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html</a></p>
 
       
@@ -524,8 +524,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/09/knn/" rel="next" title="K近邻算法的实现">
-                <i class="fa fa-chevron-left"></i> K近邻算法的实现
+              <a href="/2019/04/21/knight_journery/" rel="next" title="knight's journey(dfs)">
+                <i class="fa fa-chevron-left"></i> knight's journey(dfs)
               </a>
             
           </div>
@@ -533,6 +533,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/09/knn/knn/" rel="prev" title="K近邻算法的实现">
+                K近邻算法的实现 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
