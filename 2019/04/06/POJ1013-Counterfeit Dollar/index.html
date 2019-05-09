@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="SylarChen的个人博客">
 <meta property="og:description" content="Time limit: 1000 ms Memory limit: 32768 kB  题干：Description:Sally Jones has a dozen Voyageur silver dollars. However, only eleven of the coins are true silver dollars; one coin is counterfeit even tho">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-06T05:26:51.615Z">
+<meta property="og:updated_time" content="2019-05-09T07:34:31.769Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="POJ1013-Counterfeit Dollar">
 <meta name="twitter:description" content="Time limit: 1000 ms Memory limit: 32768 kB  题干：Description:Sally Jones has a dozen Voyageur silver dollars. However, only eleven of the coins are true silver dollars; one coin is counterfeit even tho">
@@ -301,7 +301,7 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-post" itemscope="" itemtype="http://schema.org/Article">
   
   
   
@@ -420,73 +420,8 @@ ABIJ EFGH even
 <ul>
 <li>我们只需要枚举不同的硬币，假设它为假币，并假设它的重量为<br>更重或更轻，然后带入到给出的情况中，看是否合理。合理的<br>话，我们假设的情况就成立。</li>
 </ul>
-<h3 id="Source-Code"><a href="#Source-Code" class="headerlink" title="Source Code"></a>Source Code</h3><pre><code>#include &lt;iostream&gt;
-#include &lt;cstring&gt;
+<h3 id="Source-Code"><a href="#Source-Code" class="headerlink" title="Source Code"></a>Source Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> Left[<span class="number">3</span>][<span class="number">7</span>];</span><br><span class="line"><span class="keyword">char</span> Right[<span class="number">3</span>][<span class="number">7</span>];</span><br><span class="line"><span class="keyword">char</span> result[<span class="number">3</span>][<span class="number">7</span>];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isfake</span><span class="params">(<span class="keyword">char</span> c, <span class="keyword">bool</span> light)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)&#123;</span><br><span class="line">        <span class="keyword">char</span>* pleft;</span><br><span class="line">        <span class="keyword">char</span>* pright;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (light)&#123;</span><br><span class="line">            pleft = Left[i];</span><br><span class="line">            pright = Right[i];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            pleft = Right[i];</span><br><span class="line">            pright = Left[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">switch</span> (result[i][<span class="number">0</span>])&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'u'</span>:</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">strchr</span>(pright, c) == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'e'</span>:</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">strchr</span>(pleft, c) || <span class="built_in">strchr</span>(pright, c) ) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'d'</span>:</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">strchr</span>(pleft, c) == <span class="literal">NULL</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span> (t--)&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++)</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; Left[i] &gt;&gt; Right[i] &gt;&gt; result[i];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> c = <span class="string">'A'</span>; c &lt;= <span class="string">'L'</span>; c++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (isfake(c, <span class="literal">true</span>) )&#123;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; c &lt;&lt; <span class="string">" is the counterfeit coin and it is light. "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (isfake(c, <span class="literal">false</span>) )&#123;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; c &lt;&lt; <span class="string">" is the counterfeit coin and it is heavy. "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-using namespace std;
-
-char Left[3][7];
-char Right[3][7];
-char result[3][7];
-
-
-bool isfake(char c, bool light){
-    for (int i = 0; i &lt; 3; i++){
-        char* pleft;
-        char* pright;
-
-        if (light){
-            pleft = Left[i];
-            pright = Right[i];
-        } else {
-            pleft = Right[i];
-            pright = Left[i];
-        }
-
-
-        switch (result[i][0]){
-        case &apos;u&apos;:
-            if (strchr(pright, c) == NULL) return false;
-            break;
-        case &apos;e&apos;:
-            if (strchr(pleft, c) || strchr(pright, c) ) return false;
-            break;
-        case &apos;d&apos;:
-            if (strchr(pleft, c) == NULL) return false;
-            break;
-        }
-
-
-    }
-    return true;
-
-}
-
-
-int main(){
-    int t;
-    cin &gt;&gt; t;
-    while (t--){
-        for (int i = 0; i &lt; 3; i++)
-            cin &gt;&gt; Left[i] &gt;&gt; Right[i] &gt;&gt; result[i];
-
-        for (char c = &apos;A&apos;; c &lt;= &apos;L&apos;; c++){
-            if (isfake(c, true) ){
-                cout &lt;&lt; c &lt;&lt; &quot; is the counterfeit coin and it is light. &quot; &lt;&lt; endl;
-                break;
-            }
-            if (isfake(c, false) ){
-                cout &lt;&lt; c &lt;&lt; &quot; is the counterfeit coin and it is heavy. &quot; &lt;&lt; endl;
-                break;
-            }
-
-        }
-
-    }
-
-    return 0;
-}
-</code></pre>
       
     </div>
     
@@ -633,7 +568,7 @@ int main(){
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -644,7 +579,7 @@ int main(){
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>

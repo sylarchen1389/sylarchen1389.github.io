@@ -99,7 +99,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://raw.githubusercontent.com/sylarchen1389/sylarchen1389.github.io/master/image/678929722253413340.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/sylarchen1389/sylarchen1389.github.io/master/image/132304294059574714.jpg">
-<meta property="og:updated_time" content="2019-04-06T05:29:34.589Z">
+<meta property="og:updated_time" content="2019-05-09T07:35:43.064Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="愚人节快乐">
 <meta name="twitter:description" content="Time limit： 一辈子 Memory limit： ？？？  题干：Description:SC 作为一名年轻的大学生，超级并不想找什么女朋友某一天，他的好友小帆给他发来这样一条消息  哇cao瞬间热血沸腾了有木有 因为SC是蒟蒻，所以请你设计一个程序，算出这两个问题，帮SC顺利脱单 写不出来就要负起责任帮SC介绍妹子哦#手动滑稽#  2019/4/1">
@@ -303,7 +303,7 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-post" itemscope="" itemtype="http://schema.org/Article">
   
   
   
@@ -430,75 +430,8 @@ WeChat: ***
 <ul>
 <li>直接用质因数迭代求最大质因数就行<del>你看脱单就是这么简单（雾</del></li>
 </ul>
-<h3 id="Source-Code"><a href="#Source-Code" class="headerlink" title="Source Code"></a>Source Code</h3><pre><code>#include &lt;iostream&gt;
-#define ll long long int
-
-using namespace std;
-
-char num[20];
-ll arr[20];
-
-//求最大质因数
-ll GetMaxPrime(ll n){
-    ll i = 2;
-    ll res = 1;
-    while (n &gt; 2){
-        if (n % i == 0){
-            n /= i;
-            res = i;
-        } else
-            i++;
-    }
-    return res;
-}
-
-void data(char num[]){
-    ll integer = 0, mod = 0, res;
-    int n = 0;
-    while (num[n] != &apos;*&apos;) n++;
-
-
-    for (int j = 0; j &lt; 10 - n; j++){
-        int t = j + 1;
-        mod = num[j] - &apos;0&apos;;
-        while (t &lt; 10){
-            mod *= 10;
-            t++;
-        }
-        integer += mod;
-    }
-
-    for (int k = 1; k &lt; 1000; k++){
-        integer += k;
-        res = integer / GetMaxPrime(integer);
-        if (res == GetMaxPrime(res) ){
-            cout &lt;&lt; res &lt;&lt; endl;
-            integer /= res;
-            cout &lt;&lt; integer &lt;&lt; endl;
-            return;
-        }
-
-    }
-
-
-}
-
-
-int main(){
-    ll n, ans1;
-    cin &gt;&gt; n;
-    ans1 = GetMaxPrime(n);
-    cout &lt;&lt; ans1 &lt;&lt; endl;
-    n /= ans1;
-    cout &lt;&lt; n &lt;&lt; endl;
-    cout &lt;&lt; &quot;Wechat:&quot; &lt;&lt; &quot;Lin&quot; &lt;&lt; ans1 &lt;&lt; n &lt;&lt; endl;
-
-    cin &gt;&gt; num;
-    data(num);
-
-    return 0;
-}
-</code></pre><h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p><img src="https://raw.githubusercontent.com/sylarchen1389/sylarchen1389.github.io/master/image/132304294059574714.jpg" width="80%" height="80%" div="" align="center"></p>
+<h3 id="Source-Code"><a href="#Source-Code" class="headerlink" title="Source Code"></a>Source Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long int</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> num[<span class="number">20</span>];</span><br><span class="line">ll arr[<span class="number">20</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//求最大质因数</span></span><br><span class="line"><span class="function">ll <span class="title">GetMaxPrime</span><span class="params">(ll n)</span></span>&#123;</span><br><span class="line">    ll i = <span class="number">2</span>;</span><br><span class="line">    ll res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (n &gt; <span class="number">2</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>)&#123;</span><br><span class="line">            n /= i;</span><br><span class="line">            res = i;</span><br><span class="line">        &#125; <span class="keyword">else</span></span><br><span class="line">            i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">data</span><span class="params">(<span class="keyword">char</span> num[])</span></span>&#123;</span><br><span class="line">    ll integer = <span class="number">0</span>, mod = <span class="number">0</span>, res;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (num[n] != <span class="string">'*'</span>) n++;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span> - n; j++)&#123;</span><br><span class="line">        <span class="keyword">int</span> t = j + <span class="number">1</span>;</span><br><span class="line">        mod = num[j] - <span class="string">'0'</span>;</span><br><span class="line">        <span class="keyword">while</span> (t &lt; <span class="number">10</span>)&#123;</span><br><span class="line">            mod *= <span class="number">10</span>;</span><br><span class="line">            t++;</span><br><span class="line">        &#125;</span><br><span class="line">        integer += mod;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt; <span class="number">1000</span>; k++)&#123;</span><br><span class="line">        integer += k;</span><br><span class="line">        res = integer / GetMaxPrime(integer);</span><br><span class="line">        <span class="keyword">if</span> (res == GetMaxPrime(res) )&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            integer /= res;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; integer &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ll n, ans1;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    ans1 = GetMaxPrime(n);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans1 &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    n /= ans1;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; n &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Wechat:"</span> &lt;&lt; <span class="string">"Lin"</span> &lt;&lt; ans1 &lt;&lt; n &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; num;</span><br><span class="line">    data(num);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p><img src="https://raw.githubusercontent.com/sylarchen1389/sylarchen1389.github.io/master/image/132304294059574714.jpg" width="80%" height="80%" div="" align="center"></p>
 <p>哇擦真有这个人啊!!!!</p>
 <p>SC即将迎娶白富美,走上人生巅峰了吗，想想都有点小激动</p>
 
@@ -560,6 +493,10 @@ int main(){
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/16/求最大子数组/" rel="prev" title="求最大子数组的四种方法">
+                求最大子数组的四种方法 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -638,7 +575,7 @@ int main(){
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -649,7 +586,7 @@ int main(){
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
